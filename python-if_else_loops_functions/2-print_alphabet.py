@@ -2,4 +2,4 @@
 x = ''
 for i in range(97, 123):
     x = x + chr(i)
-print(x, end="")
+print(f"{x}", end="")
