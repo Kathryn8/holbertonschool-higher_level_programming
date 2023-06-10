@@ -2,6 +2,8 @@
 def best_score(a_dictionary):
     if a_dictionary is None:
         return None
-    invert_dict = {v: k for (k, v) in a_dictionary.items()}
-    max_value = max(invert_dict.keys())
-    return invert_dict.get(max_value)
+    key_list = list(a_dictionary.keys())
+    values_list = list(a_dictionary.values())
+    max_value = max(values_list)
+    pos = values_list.index(max_value)
+    return key_list[pos]
