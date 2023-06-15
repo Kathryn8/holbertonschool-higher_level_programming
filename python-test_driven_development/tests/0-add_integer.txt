@@ -56,3 +56,18 @@ Test for integer return type:
 
     >>> add_integer(5.5, 2.25)
     7
+
+Test for float overflow:
+
+    >>> add_integer(float('inf'), float('inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+Test for NaN:
+
+    >>> import math
+    >>> add_integer(NaN)
+    Traceback (most recent call last):
+    ...
+    NameError: name 'NaN' is not defined
