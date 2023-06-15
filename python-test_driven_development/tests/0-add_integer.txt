@@ -67,7 +67,14 @@ Test for float overflow:
 Test for NaN:
 
     >>> import math
-    >>> add_integer(NaN)
+    >>> add_integer(math.nan)
     Traceback (most recent call last):
     ...
-    NameError: name 'NaN' is not defined
+    ValueError: cannot convert float NaN to integer
+
+Test for no input:
+
+    >>> add_integer(None)
+    Traceback (most recent call last):
+    ...
+    TypeError: a must be an integer
