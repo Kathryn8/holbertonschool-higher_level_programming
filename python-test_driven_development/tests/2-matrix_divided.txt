@@ -1,0 +1,56 @@
+The ``2-matrix_divided`` module
+======================
+
+Using ``matrix_divided``
+-------------------
+
+Import the function to test:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Tests to run:
+
+      case: normal
+      >>> matrix = [[1, 2, 3], [4, 5, 6]]
+      >>> matrix_divided(matrix, 1)
+      [[1.0, 2.0, 3.0], [4.0, 5.0, 6.0]]
+
+      case: divide by float
+      >>> matrix = [[1, 2, 3], [4, 5, 6]]
+      >>> matrix_divided(matrix, 1.75)
+      [[0.57, 1.14, 1.71], [2.29, 2.86, 3.43]]
+
+      case: divide by zero
+      >>> matrix = [[1, 2, 3], [4, 5, 6]]
+      >>> matrix_divided(matrix, 0)
+      Traceback (most recent call last):
+      ...
+      ZeroDivisionError: division by zero
+
+      case: matrix no input
+      >>> matrix = None
+      >>> matrix_divided(matrix, 1)
+      Traceback (most recent call last):
+      ...
+      TypeError: 'NoneType' object is not iterable
+
+      case: matrix NaN
+      >>> import math
+      >>> matrix = math.nan
+      >>> matrix_divided(matrix, 1)
+      Traceback (most recent call last):
+      ...
+      TypeError: 'float' object is not iterable
+
+      case: div no input
+      >>> matrix = [[1, 2, 3], [4, 5, 6]]
+      >>> matrix_divided(matrix, None)
+      Traceback (most recent call last):
+      ...
+      TypeError: div must be a number
+
+      case: div NaN
+      >>> import math
+      >>> matrix = [[1, 2, 3], [4, 5, 6]]
+      >>> matrix_divided(matrix, math.nan)
+      [[nan, nan, nan], [nan, nan, nan]]
