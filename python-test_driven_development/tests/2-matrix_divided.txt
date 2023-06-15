@@ -32,7 +32,7 @@ Tests to run:
       >>> matrix_divided(matrix, 1)
       Traceback (most recent call last):
       ...
-      TypeError: 'NoneType' object is not iterable
+      TypeError: matrix must be a matrix (list of lists) of integers/floats
 
       case: matrix NaN
       >>> import math
@@ -40,7 +40,7 @@ Tests to run:
       >>> matrix_divided(matrix, 1)
       Traceback (most recent call last):
       ...
-      TypeError: 'float' object is not iterable
+      TypeError: matrix must be a matrix (list of lists) of integers/floats
 
       case: div no input
       >>> matrix = [[1, 2, 3], [4, 5, 6]]
@@ -54,3 +54,10 @@ Tests to run:
       >>> matrix = [[1, 2, 3], [4, 5, 6]]
       >>> matrix_divided(matrix, math.nan)
       [[nan, nan, nan], [nan, nan, nan]]
+
+      case: matrix not a list
+      >>> matrix = 1008
+      >>> matrix_divided(matrix, 1)
+      Traceback (most recent call last):
+      ...
+      TypeError: matrix must be a matrix (list of lists) of integers/floats
