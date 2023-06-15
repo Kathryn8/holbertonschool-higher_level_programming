@@ -17,7 +17,8 @@ Tests to run:
       String:
       <BLANKLINE>
       Here.
-
+      <BLANKLINE>
+      
       case: not string
       >>> text_indentation(42000)
       Traceback (most recent call last):
