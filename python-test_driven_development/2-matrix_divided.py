@@ -12,6 +12,8 @@ def matrix_divided(matrix, div):
     error_msg = "matrix must be a matrix (list of lists) of integers/floats"
     row_length_error_msg = "Each row of the matrix must have the same size"
     check_lengths = []
+    if type(matrix) != list:
+        raise TypeError(error_msg)
     for index, k in enumerate(matrix):
         if type(k) != list:
             raise TypeError(error_msg)
