@@ -1,0 +1,60 @@
+The ``3-say_my_name`` module
+======================
+
+Using ``say_my_name``
+-------------------
+
+Import the function to test:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Tests to run:
+
+      case: normal
+      >>> first_name = "Ex"
+      >>> last_name = "Cellent"
+      >>> say_my_name(first_name, last_name)
+      My name is Ex Cellent
+
+      case: not string
+      >>> first_name = 3
+      >>> last_name = "Wild"
+      >>> say_my_name(first_name, last_name)
+      Traceback (most recent call last):
+      ...
+      TypeError: first_name must be a string
+
+      case: not string
+      >>> first_name = "Ex"
+      >>> last_name = [10, 9, 8]
+      >>> say_my_name(first_name, last_name)
+      Traceback (most recent call last):
+      ...
+      TypeError: last_name must be a string
+
+      case: no first_name input
+      >>> first_name = None
+      >>> last_name = "Smith"
+      >>> say_my_name(first_name, last_name)
+      Traceback (most recent call last):
+      ...
+      TypeError: first_name must be a string
+
+      case: no last_name input
+      >>> first_name = "Color"
+      >>> last_name = None
+      >>> say_my_name(first_name, last_name)
+      Traceback (most recent call last):
+      ...
+      TypeError: last_name must be a string
+
+      case: missing one argument
+      >>> first_name = "Color"
+      >>> say_my_name(first_name)
+      My name is Color 
+
+      case: missing both arguments
+      >>> say_my_name()
+      Traceback (most recent call last):
+      ...
+      TypeError: say_my_name() missing 1 required positional argument: 'first_name'
