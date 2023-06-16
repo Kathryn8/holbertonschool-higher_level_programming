@@ -32,7 +32,7 @@ class TestMaxInteger(unittest.TestCase):
         import math
         self.assertRaises(TypeError, max_integer([9, 8, 7, math.nan]))
         # test for max at beginning
-        self.assertEqual(max_integer([45, 66, 122, 89, 76]), 122)
+        self.assertEqual(max_integer([122, 66, 45, 89, 76]), 122)
         # test for max in the middle
         self.assertEqual(max_integer([3, 2, 10, 9, 8]), 10)
 
