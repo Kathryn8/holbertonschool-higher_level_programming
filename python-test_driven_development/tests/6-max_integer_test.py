@@ -31,5 +31,10 @@ class TestMaxInteger(unittest.TestCase):
         # test if list contains all NaN
         import math
         self.assertRaises(TypeError, max_integer([9, 8, 7, math.nan]))
+        # test for max at beginning
+        self.assertEqual(max_integer([45, 66, 122, 89, 76]), 122)
+        # test for max in the middle
+        self.assertEqual(max_integer([3, 2, 10, 9, 8]), 10)
+
         # self.assertRaisesRegex(TypeError, "'>' not supported between instanc\
         # es of 'NoneType' and 'NoneType'", max_integer([None, None, None]))
