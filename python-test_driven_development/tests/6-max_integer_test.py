@@ -14,6 +14,8 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([1, 2, 3, 4]), 4)
         # test is list is empty
         self.assertRaises(TypeError, max_integer([]))
+        # test is list is empty, return none
+        self.assertEqual(max_integer([]), None)
         # test if only one element in list
         self.assertEqual(max_integer([10]), 10)
         # test if no parameter given
@@ -25,6 +27,7 @@ class TestMaxInteger(unittest.TestCase):
         # test if list contains all 0
         self.assertEqual(max_integer([0, 0, 0]), 0)
         # test if list contains all None value
+        self.assertEqual(max_integer([None]), None)
         # test if list contains all NaN
         import math
         self.assertRaises(TypeError, max_integer([9, 8, 7, math.nan]))
