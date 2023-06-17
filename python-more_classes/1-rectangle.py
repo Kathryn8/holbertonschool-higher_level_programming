@@ -10,9 +10,12 @@ class Rectangle:
     Description of the class Rectangle
     """
     def __init__(self, width=0, height=0):
-        """Description of instantiation function"""
-        self.width = width
+        """
+        Description of instantiation function
+        Arguments: width, height
+        """
         self.height = height
+        self.width = width
 
     @property
     def height(self):
