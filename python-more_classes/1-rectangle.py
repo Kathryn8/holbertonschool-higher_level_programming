@@ -24,9 +24,10 @@ class Rectangle:
         """Instance method that sets the private instance variable width"""
         if type(value) != int:
             raise TypeError("width must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("width must be >= 0")
-        self.___height = value
+        else:
+            self.___height = value
 
     @property
     def width(self):
@@ -38,6 +39,7 @@ class Rectangle:
         """Instance method that sets the private instance variable width"""
         if type(value) != int:
             raise TypeError("width must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("width must be >= 0")
-        self.__width = value
+        else:
+            self.__width = value
