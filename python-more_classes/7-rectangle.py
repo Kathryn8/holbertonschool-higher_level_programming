@@ -8,7 +8,7 @@ class Rectangle:
     """
     Rectangle class with width and height
     """
-    
+
     number_of_instances = 0
     print_symbol = "#"
 
@@ -55,9 +55,11 @@ class Rectangle:
             self.__height = value
 
     def area(self):
+        """Returns the area of the rectangle"""
         return int(self.__width * self.__height)
 
     def perimeter(self):
+        """Returns the perimeter of the rectangle"""
         if self.__width == 0 or self.__height == 0:
             return 0
         return self.__width * 2 + self.__height * 2
@@ -68,10 +70,10 @@ class Rectangle:
         return_string = ""
         for i in range(self.__height):
             if i == self.__height - 1:
-                return_string = return_string +
+                return_string = return_string +\
                 str(self.print_symbol) * self.__width
             else:
-                return_string = return_string +
+                return_string = return_string +\
                 str(self.print_symbol) * self.__width + '\n'
         return return_string
 
