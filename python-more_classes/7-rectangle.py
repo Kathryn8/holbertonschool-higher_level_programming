@@ -8,6 +8,7 @@ class Rectangle:
     """
     Rectangle class with width and height
     """
+    
     number_of_instances = 0
     print_symbol = "#"
 
