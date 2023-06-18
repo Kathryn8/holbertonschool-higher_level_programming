@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Rectangle class example
+Module containing the definition of a new data type Rectangle
 """
 
 
