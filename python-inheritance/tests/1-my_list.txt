@@ -66,3 +66,20 @@ Tests to run:
       >>> my_list.append(math.nan)
       >>> my_list.print_sorted()
       [nan]
+
+      case: nan
+      >>> import math
+      >>> my_list = MyList()
+      >>> my_list.append(math.nan)
+      >>> my_list.print_sorted()
+      [nan]
+
+      case:  missing list
+      >>> new_list = MyList([])
+      >>> new_list.print_sorted()
+      []
+
+      case:  missing arg
+      >>> new_list = MyList()
+      >>> new_list.print_sorted()
+      []
