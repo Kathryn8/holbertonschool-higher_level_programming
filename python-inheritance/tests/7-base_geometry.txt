@@ -133,3 +133,9 @@ Tests to run:
       Traceback (most recent call last):
       ...
       TypeError: SET! must be an integer
+
+      syntax error case:
+      >>> bg.integer_validator("errrrrr", fdsa7890,fdsja900d0kalj;4m.;,;[;-p0];;])
+      Traceback (most recent call last):
+      ...
+      SyntaxError: invalid syntax
