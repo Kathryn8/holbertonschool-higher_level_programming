@@ -27,8 +27,17 @@ Tests to run:
       >>> my_list.append(5)
       >>> my_list.append(1)
       >>> my_list.append(2)
+
+      case: print orginal list
+      >>> print(my_list)
+      [3, 4, 5, 1, 2]
+
       >>> my_list.print_sorted()
       [1, 2, 3, 4, 5]
+
+      case: check orginal is unchanged
+      >>> print(my_list)
+      [3, 4, 5, 1, 2]
 
       case: not sorted v2
       >>> my_list = MyList()
@@ -89,5 +98,5 @@ Tests to run:
       True
 
       case: is instance
-      >>> isinstance(my_list, MyList)
+      >>> isinstance(new_list, MyList)
       True
