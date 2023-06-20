@@ -86,5 +86,9 @@ Tests to run:
       Traceback (most recent call last):
       ...
       TypeError: float must be an integer
-      
-round float, check int cast is corect
+
+      round float:
+      >>> bg.integer_validator("rounded number", round(8.5))
+
+      check int cast is corect:
+      >>> bg.integer_validator("int cast check", int(3.14))
