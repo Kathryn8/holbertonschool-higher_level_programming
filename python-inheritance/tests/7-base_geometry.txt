@@ -115,3 +115,9 @@ Tests to run:
       Traceback (most recent call last):
       ...
       TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+      tuple case:
+      >>> bg.integer_validator("tuple", (2, 3))
+      Traceback (most recent call last):
+      ...
+      TypeError: tupple must be an integer
