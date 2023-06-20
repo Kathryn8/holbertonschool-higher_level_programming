@@ -4,7 +4,7 @@ The ``1-my_list`` module
 Using ``print_sorted``
 -------------------
 
-Import the function to test:
+Access the function to test:
 
        >>> MyList = __import__('1-my_list').MyList
 
@@ -18,7 +18,7 @@ Tests to run:
       >>> my_list.append(3)
       >>> my_list.append(5)
       >>> my_list.print_sorted()
-      [1, 4, 2, 3, 5]
+      [1, 2, 3, 4, 5]
 
       case: not sorted v1
       >>> my_list = MyList()
@@ -28,7 +28,7 @@ Tests to run:
       >>> my_list.append(1)
       >>> my_list.append(2)
       >>> my_list.print_sorted()
-      [1, 4, 2, 3, 5]
+      [1, 2, 3, 4, 5]
 
       case: not sorted v2
       >>> my_list = MyList()
@@ -38,7 +38,7 @@ Tests to run:
       >>> my_list.append(3)
       >>> my_list.append(1)
       >>> my_list.print_sorted()
-      [1, 4, 2, 3, 5]
+      [1, 2, 3, 4, 5]
 
       case: not sorted negative numbers
       >>> my_list = MyList()
@@ -48,4 +48,14 @@ Tests to run:
       >>> my_list.append(-100)
       >>> my_list.append(1)
       >>> my_list.print_sorted()
-      [1, 4, 2, 3, 5]
+      [-100, -20, 1, 4, 5]
+
+      case: empty
+      >>> my_list = MyList()
+      >>> my_list.append(None)
+      >>> my_list.append(None)
+      >>> my_list.append(None)
+      >>> my_list.print_sorted()
+      Traceback (most recent call last):
+      ...
+      TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
