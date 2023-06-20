@@ -59,3 +59,10 @@ Tests to run:
       Traceback (most recent call last):
       ...
       TypeError: '<' not supported between instances of 'NoneType' and 'NoneType'
+
+      case: nan
+      >>> import math
+      >>> my_list = MyList()
+      >>> my_list.append(math.nan)
+      >>> my_list.print_sorted()
+      [nan]
