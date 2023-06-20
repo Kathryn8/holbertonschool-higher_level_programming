@@ -121,3 +121,15 @@ Tests to run:
       Traceback (most recent call last):
       ...
       TypeError: tuple must be an integer
+
+      boolean case:
+      >>> bg.integer_validator("BOOL!", True)
+      Traceback (most recent call last):
+      ...
+      TypeError: BOOL! must be an integer
+
+      set case:
+      >>> bg.integer_validator("SET!", {})
+      Traceback (most recent call last):
+      ...
+      TypeError: SET! must be an integer
