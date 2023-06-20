@@ -103,3 +103,9 @@ Tests to run:
       >>> x = BaseGeometry().integer_validator("checking", 8)
       >>> print(x)
       None
+
+      name error:
+      >>> bg.integer_validator("a_name", a)
+      Traceback (most recent call last):
+      ...
+      NameError: name 'a' is not defined
