@@ -83,3 +83,11 @@ Tests to run:
       >>> new_list = MyList()
       >>> new_list.print_sorted()
       []
+
+      case: subclass test
+      >>> issubclass(MyList, list)
+      True
+
+      case: is instance
+      >>> isinstance(my_list, MyList)
+      True
