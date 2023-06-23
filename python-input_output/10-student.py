@@ -13,6 +13,6 @@ class Student:
     def to_json(self, attrs=None):
         """Returns a dictionary representation"""
         d = vars(self)
-        if (type(attrs) == list) and attrs:
+        if (type(attrs) == list) and ((type(x) == str) for x in attrs):
             d = {k: v for (k, v) in d.items() if k in attrs}
         return d
