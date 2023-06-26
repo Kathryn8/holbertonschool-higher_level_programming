@@ -22,3 +22,7 @@ class TestBaseClass(unittest.TestCase):
         self.assertEqual(self.b3.id, 2)
         self.assertEqual(self.b4.id, 3)
         self.assertEqual(self.b5.id, 4)
+
+    def test_base_dummy(self):
+        """Test case functions"""
+        return True
