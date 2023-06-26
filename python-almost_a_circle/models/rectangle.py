@@ -6,6 +6,14 @@ from models.base import Base
 class Rectangle(Base):
     """Description of the the class Rectangle"""
 
+    def __init__(self, width, height, x=0, y=0, id=None):
+        """Class constructor function"""
+        super(Rectangle, self).__init__(id)
+        self.width = width
+        self.height = height
+        self.x = x
+        self.y = y
+
     @property
     def width(self):
         """Get width of rectangle"""
@@ -13,12 +21,8 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        """"Validates the width value as positive integer"""
-        if type(value) != int:
-            raise TypeError("Value must be integer")
-        if value < 0:
-            raise ValueError("Value must be positive")
-        self.__width = value
+        """"Sets the width value with validation"""
+        self.__width = type(self).dimension_validator(self, "width", value)
 
     @property
     def height(self):
@@ -27,12 +31,8 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        """Validates the height value as positive integer"""
-        if type(value) != int:
-            raise TypeError("Value must be intger")
-        if value < 0:
-            raise ValueError("Value must be positive")
-        self.__height = value
+        """"Sets the height value with validation"""
+        self.__height = type(self).dimension_validator(self, "height", value)
 
     @property
     def x(self):
@@ -42,7 +42,7 @@ class Rectangle(Base):
     @x.setter
     def x(self, value):
         """Validates the x value"""
-        self.__x = value
+        self.__x = type(self).coordinate_validator(self, "x", value)
 
     @property
     def y(self):
@@ -52,12 +52,22 @@ class Rectangle(Base):
     @y.setter
     def y(self, value):
         """Validates the y value"""
-        self.__y = value
+        self.__y = type(self).coordinate_validator(self, "y", value)
 
-    def __init__(self, width, height, x=0, y=0, id=None):
-        """Class constructor function"""
-        super(Rectangle, self).__init__(id)
-        self.__width = width
-        self.__height = height
-        self.__x = x
-        self.__y = y
+    def dimension_validator(self, name, value):
+        """"Validates the width and height values as positive integers"""
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        elif value <= 0:
+            raise ValueError("{} must be > 0".format(name))
+        else:
+            return value
+
+    def coordinate_validator(self, name, value):
+        """"Validates the x and y values as positive integers"""
+        if type(value) != int:
+            raise TypeError("{} must be an integer".format(name))
+        elif value < 0:
+            raise ValueError("{} must be >= 0".format(name))
+        else:
+            return value
