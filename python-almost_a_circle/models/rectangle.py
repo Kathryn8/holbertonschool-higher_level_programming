@@ -80,3 +80,8 @@ class Rectangle(Base):
         """ prints in stdout the Rectangle instance with the character #"""
         for row in range(self.__height):
             print("#" * self.__width)
+
+    def __str__(self):
+        coordinates = f"{self.__x}/{self.__y}"
+        dimensions = f"{self.__width}/{self.__height}"
+        return f"[Rectangle] ({self.id}) {coordinates} - {dimensions}"
