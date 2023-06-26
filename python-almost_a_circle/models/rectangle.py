@@ -88,13 +88,35 @@ class Rectangle(Base):
         dimensions = f"{self.__width}/{self.__height}"
         return f"[Rectangle] ({self.id}) {coordinates} - {dimensions}"
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """Updates attributes of instance"""
-        try:
-            self.id = args[0]
-            self.__width = args[1]
-            self.__height = args[2]
-            self.__x = args[3]
-            self.__y = args[4]
-        except IndexError:
-            pass
+        if args:
+            try:
+                self.id = args[0]
+                self.__width = args[1]
+                self.__height = args[2]
+                self.__x = args[3]
+                self.__y = args[4]
+            except IndexError:
+                pass
+        else:
+            try:
+                self.id = kwargs['id']
+            except KeyError:
+                pass
+            try:
+                self.__width = kwargs['width']
+            except KeyError:
+                pass
+            try:
+                self.__height = kwargs['height']
+            except KeyError:
+                pass
+            try:
+                self.__x = kwargs['x']
+            except KeyError:
+                pass
+            try:
+                self.__y = kwargs['x']
+            except KeyError:
+                pass
