@@ -71,3 +71,7 @@ class Rectangle(Base):
             raise ValueError("{} must be >= 0".format(name))
         else:
             return value
+
+    def area(self):
+        """Returns the area of a circle"""
+        return self.__width * self.__height
