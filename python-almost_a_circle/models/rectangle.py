@@ -86,3 +86,13 @@ class Rectangle(Base):
         coordinates = f"{self.__x}/{self.__y}"
         dimensions = f"{self.__width}/{self.__height}"
         return f"[Rectangle] ({self.id}) {coordinates} - {dimensions}"
+
+    def update(self, *args):
+        try:
+            self.id = args[0]
+            self.__width = args[1]
+            self.__height = args[2]
+            self.__x = args[3]
+            self.__y = args[4]
+        except IndexError:
+            pass
