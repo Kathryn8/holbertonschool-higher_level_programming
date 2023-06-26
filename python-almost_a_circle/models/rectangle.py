@@ -83,11 +83,13 @@ class Rectangle(Base):
             print(" " * self.__x + "#" * self.__width)
 
     def __str__(self):
+        """Returns formatted string"""
         coordinates = f"{self.__x}/{self.__y}"
         dimensions = f"{self.__width}/{self.__height}"
         return f"[Rectangle] ({self.id}) {coordinates} - {dimensions}"
 
     def update(self, *args):
+        """Updates attributes of instance"""
         try:
             self.id = args[0]
             self.__width = args[1]
