@@ -117,6 +117,6 @@ class Rectangle(Base):
             except KeyError:
                 pass
             try:
-                self.__y = kwargs['x']
+                self.__y = kwargs['y']
             except KeyError:
                 pass
