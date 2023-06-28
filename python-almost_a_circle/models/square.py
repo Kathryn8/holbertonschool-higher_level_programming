@@ -17,24 +17,15 @@ class Square(Rectangle):
         return f"[Square] ({self.id}) {coordinates} - {self.width}"
 
     @property
-    def width(self):
-        """Get width of rectangle"""
-        return self.__width
+    def size(self):
+        """Get the size of the square"""
+        return self.width
 
-    @width.setter
-    def width(self, value):
-        """"Sets the width value with validation"""
-        self.__width = type(self).dimension_validator(self, "width", value)
-
-    @property
-    def height(self):
-        """Get height of a rectangle"""
-        return self.__height
-
-    @height.setter
-    def height(self, value):
-        """"Sets the height value with validation"""
-        self.__height = type(self).dimension_validator(self, "height", value)
+    @size.setter
+    def size(self, value):
+        """"Sets the size value with validation"""
+        self.width = type(self).dimension_validator(self, "width", value)
+        self.height = type(self).dimension_validator(self, "height", value)
 
     @property
     def x(self):
