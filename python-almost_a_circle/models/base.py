@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Here is the module description"""
 import json
+import gc
 
 
 class Base:
@@ -20,5 +21,14 @@ class Base:
         """ returns the JSON string representation of list_dictionaries"""
         if list_dictionaries is None or list_dictionaries == []:
             return "[]"
-        else:
-            return json.dumps(list_dictionaries)
+        return json.dumps(list_dictionaries)
+
+    @classmethod
+    def save_to_file(cls, list_objs):
+        if list_objs is None:
+            list_objs = []
+        filename = cls.__name__ + ".json"
+        json_string = cls.to_json_string(
+            [obj.to_dictionary() for obj in list_objs])
+        with open(filename, 'w', encoding="utf-8") as new_file:
+            new_file.write(json_string)
