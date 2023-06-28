@@ -58,3 +58,11 @@ class Square(Rectangle):
                 setattr(self, kwarg, kwargs[kwarg])
             except KeyError:
                 pass
+
+    def to_dictionary(self):
+        """Returns the dictionary representation of a Rectangle"""
+        list_of_keys = ["x", "y", "id", "size"]
+        rect_dict = {}
+        for key in list_of_keys:
+            rect_dict[key] = getattr(self, key)
+        return rect_dict
