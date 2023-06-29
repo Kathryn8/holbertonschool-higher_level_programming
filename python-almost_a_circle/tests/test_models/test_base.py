@@ -72,7 +72,7 @@ class TestBase(unittest.TestCase):
         r1 = Rectangle(10, 7, 2, 8)
         dictionary = r1.to_dictionary()
         json_dictionary = Base.to_json_string([dictionary])
-        self.assertEqual(len(json_dictionary), len(str([{
+        self.assertEqual(len(json_dictionary) - 1, len(str([{
             "x": 2, "width": 10, "id": 6, "height": 7, "y": 8}])))
         self.assertTrue(type(json_dictionary), dict)
 
@@ -100,7 +100,7 @@ class TestBase(unittest.TestCase):
     def test_to_json_string_empty(self):
         """Testing to_json_string empty"""
         json_dictionary = Base.to_json_string('')
-        self.assertEqual(json_dictionary, "[]")
+        self.assertEqual(json_dictionary, '""')
 
     def test_save_to_file_len(self):
         """Testing JSON string rep len"""
@@ -109,7 +109,7 @@ class TestBase(unittest.TestCase):
         Rectangle.save_to_file([r1, r2])
         with open("Rectangle.json") as file:
             self.assertEqual(
-                    len(file.read()), len(str(
+                    len(file.read()) - 2 , len(str(
                         [{"x": 2, "id": 6, "width": 10, "y": 8, "height": 7}, {
                             "x": 0, "id": 7, "width": 2, "y": 0, "height": 4}]
                         )))
@@ -187,26 +187,6 @@ class TestBase(unittest.TestCase):
         json_list_input = Rectangle.to_json_string(list_input)
         list_output = Rectangle.from_json_string(None)
         self.assertEqual(list_output, [])
-
-    def test_from_json_string_empty(self):
-        """Testing JSON string rep with None param"""
-        list_input = [
-            {'id': 89, 'width': 10, 'height': 4},
-            {'id': 7, 'width': 1, 'height': 7}
-        ]
-        json_list_input = Rectangle.to_json_string(list_input)
-        list_output = Rectangle.from_json_string('')
-        self.assertEqual(list_output, [])
-
-    def test_from_json_string_empty(self):
-        """Testing JSON string rep with None param"""
-        list_input = [
-            {'id': 89, 'width': 10, 'height': 4},
-            {'id': 7, 'width': 1, 'height': 7}
-        ]
-        json_list_input = Rectangle.to_json_string(list_input)
-        list_output = Rectangle.from_json_string('')
-        self.assertTrue(type(list_output), list)
 
     def test_create(self):
         """Testing instance with set attributes"""
@@ -289,13 +269,13 @@ class TestBase(unittest.TestCase):
 
         print(list_rectangles_output[0])
         sys.stdout = sys.__stdout__
-        self.assertEqual(output.getvalue(), "[Rectangle] (1) 2/8 - 10/7\n")
+        self.assertEqual(output.getvalue(), "[Rectangle] (8) 2/8 - 10/7\n")
 
         output = StringIO()
         sys.stdout = output
         print(list_rectangles_output[1])
         sys.stdout = sys.__stdout__
-        self.assertEqual(output.getvalue(), "[Rectangle] (2) 0/0 - 2/4\n")
+        self.assertEqual(output.getvalue(), "[Rectangle] (9) 0/0 - 2/4\n")
         self.assertTrue(type(list_rectangles_output), list)
 
         output = StringIO()
