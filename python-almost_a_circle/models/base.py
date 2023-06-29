@@ -2,6 +2,7 @@
 """Here is the module description"""
 import json
 import gc
+import os
 
 
 class Base:
@@ -50,3 +51,16 @@ class Base:
                 dummy = cls(2)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """returns a list of instances"""
+        filename = cls.__name__ + ".json"
+        return_list = []
+        if os.path.exists(filename) is True:
+            with open(filename, "r") as open_jfile:
+                jstr_list = cls.from_json_string(open_jfile.read())
+            for elem in jstr_list:
+                instance = cls.create(**elem)
+                return_list.append(instance)
+        return return_list
