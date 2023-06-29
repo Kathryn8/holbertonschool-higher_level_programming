@@ -89,3 +89,8 @@ class TestBaseClass(unittest.TestCase):
         """Negative y"""
         with self.assertRaises(ValueError):
             self.r14 = Rectangle(1, 2, 3, -4)
+
+    def test_15(self):
+        """Test the area method"""
+        self.r15 = Rectangle(1, 2, 3, 4, 5)
+        self.assertEqual(self.r15.area(), 2)
