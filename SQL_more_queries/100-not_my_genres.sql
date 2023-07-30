@@ -10,4 +10,5 @@ LEFT JOIN
            ON b.show_id = c.id
      WHERE title = 'Dexter') d
      ON g.name = d.name
-WHERE d.name IS NULL;
+WHERE d.name IS NULL
+ORDER BY name;
