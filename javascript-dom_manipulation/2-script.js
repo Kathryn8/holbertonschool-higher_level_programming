@@ -1,5 +1,6 @@
 const special_text = document.body.querySelector("#red_header");
+const header = document.body.querySelector("header");
 
 special_text.addEventListener("click", () => {
-  special_text.setAttribute("class", "red");
+  header.setAttribute("class", "red");
 });

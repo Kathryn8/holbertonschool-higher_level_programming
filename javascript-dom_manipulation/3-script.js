@@ -1,9 +1,10 @@
 const special_text = document.body.querySelector("#toggle_header");
-special_text.setAttribute("class", "red");
+const header = document.body.querySelector("header");
+header.setAttribute("class", "red");
 
 special_text.addEventListener("click", () => {
-  if (special_text.getAttribute("class") == 'red') {
-    special_text.setAttribute("class", "green");
-  } else if (special_text.getAttribute("class") == 'green')
-    special_text.setAttribute("class", "red");
+  if (header.getAttribute("class") == 'red') {
+    header.setAttribute("class", "green");
+  } else if (header.getAttribute("class") == 'green')
+    header.setAttribute("class", "red");
 });

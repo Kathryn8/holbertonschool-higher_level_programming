@@ -1,5 +1,6 @@
 const special_text = document.body.querySelector("#red_header")
+const header = document.body.querySelector("header")
 
 special_text.addEventListener("click", () => {
-  special_text.style.color = "#FF0000"
+  header.style.color = "#FF0000"
 })
