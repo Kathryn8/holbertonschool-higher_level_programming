@@ -14,9 +14,9 @@ function translate() {
 
 $(document).ready(function () {
   $("#btn_translate").click(translate)
-  $('#btn_translate').keypress((e) => {
+  $('#language_code').keypress((e) => {
     if (e.which === 13) {
-      translate;
+      translate();
     }
   })
 })
